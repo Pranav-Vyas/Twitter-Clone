@@ -1,0 +1,108 @@
+.coverPhoto-container {
+    height: 200px;
+    background-color: #CFD9DE;
+    position: relative;
+}
+
+.profile-avatar > .MuiAvatar-root {
+    height: 130px;
+    width: 130px;
+    margin-left: 20px;
+    position: absolute;
+    bottom: -65px;
+    border: 4px solid #fff;
+    /* //////// */
+    /* opacity: 1;
+    transition: opacity .2s ease-in-out; */
+}
+
+.profileButton-container {
+    text-align: right;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profileButton-container > a > .MuiSvgIcon-root {
+    
+    color: var(--twitter-color);
+    font-weight: bold;
+    /* margin: 5px 15px; */
+    padding: 0;
+}
+
+.profileButton-container > a  {
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid;
+    padding-top: 9px;
+    border-radius: 60px;
+    display: inline-block;
+    color: var(--twitter-color);;
+    margin-right: 20px;
+}
+
+.follow-btn {
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid;
+    border-radius: 60px;
+    display: inline-block;
+    color: var(--twitter-color);;
+    background-color: transparent;
+    outline: none;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    bottom: -70px;
+    position: absolute;
+    z-index: 10;
+    border: none;
+    outline: none;
+    margin-left: 30px;
+    background: transparent;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+/* ///////////////////////////////////////////////////// */
+
+/* .profilepic__text {
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 50%;
+    text-align: center;
+}
+
+.profilepic__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+.profile-avatar:hover .MuiAvatar-root {
+    opacity: 1;
+}
+  
+.profile-avatar:hover .profilepic__image {
+    opacity: .5;
+}
+   */

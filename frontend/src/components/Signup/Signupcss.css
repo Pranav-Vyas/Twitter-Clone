@@ -1,0 +1,48 @@
+
+.signup-row {
+    height: 730px;
+}
+
+.signup-row >.left-col{
+    background-image: url("../../images/twitter-cover-img.png");
+    text-align: center;
+    padding-top: 10%;;
+    
+}
+
+.signup-wrapper {
+    background-color: #F0F2F5;
+    display: flex;
+    justify-content: center;
+    padding-top: 13%;;
+}
+
+.signupContainer {
+    background-color: #fff;
+    height: 360px;
+    width: 500px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #D9DBDE;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-input {
+    margin: 7px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 2px solid #D9DBDE;
+}
+
+.signup-btn {
+    margin: 7px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 2px solid #D9DBDE;
+}

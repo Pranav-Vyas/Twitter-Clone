@@ -1,0 +1,19 @@
+.conversation {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid var(--twitter-background);
+    cursor: pointer;
+}
+
+.conversation-details {
+    padding-left: 20px;
+}
+
+.conversation-details > h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.conversation-details > span {
+    color: var(--grey-text);
+}

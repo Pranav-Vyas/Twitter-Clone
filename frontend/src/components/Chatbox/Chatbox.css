@@ -1,0 +1,64 @@
+.chatbox-wrapper {
+    display: flex;
+    flex: 0.8;
+    /* flex: 1; */
+    min-width: fit-content;
+    /* overflow-y: scroll; */
+    /* padding-top: 10px; */
+}
+
+.chatbox {
+    /* flex: 0.8; */
+    flex: 1;
+    border-right: 1px solid var(--twitter-background);
+}
+
+.chatbox-container::-webkit-scrollbar {
+    display: none;
+}
+
+.chatbox-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border-bottom: 1px solid var(--twitter-background);
+    padding: 20px 20px;
+}
+
+.chatbox-header > h2{
+    font-weight: 800;
+    font-size: 20px;
+} 
+
+.chatbox-container {
+    height: 500px;
+    padding-top: 20px;
+    overflow-y: scroll;
+    border-bottom: 4px solid var(--twitter-background);
+}
+
+.chatbox-bottom {
+    padding: 30px 20px 20px 20px ;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.chatbox-bottom > textarea {
+    resize: none;
+    height: 72px;
+    width: 300px;
+    margin-right: 10px;
+
+}
+
+.chatbox-bottom > button {
+    width: 90px;
+    height: 45px;
+    margin-top: 15px;
+    border-radius: 60px;
+    background-color: var(--twitter-color);
+    color: #fff;
+    border: none;
+    outline: none;
+}

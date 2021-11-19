@@ -1,0 +1,55 @@
+.profile {
+    flex: 0.6;
+    border-right: 1px solid var(--twitter-background);
+    min-width: fit-content;
+    overflow-y: scroll;
+    /* padding-top: 10px; */
+}
+
+.profile::-webkit-scrollbar {
+    display: none;
+}
+
+.profile-heading {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border-bottom: 1px solid var(--twitter-background);
+    padding: 20px 20px;
+}
+
+.profile-heading > h2 {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.profile-detail {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-detail > h2 {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.follow-container {
+    padding-top: 10px;
+}
+
+.follow-container > a {
+    color: black;
+    margin-right: 20px;
+}
+
+.profile-tabs {
+    padding-top: 20px;
+}
+
+.profile-tab {
+    outline: none !important;
+}
+

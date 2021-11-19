@@ -1,0 +1,32 @@
+.viewpost-container {
+    flex: 0.6;
+    border-right: 1px solid var(--twitter-background);
+    min-width: fit-content;
+    overflow-y: scroll;
+    /* padding-top: 10px; */
+}
+
+.view-post-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border-bottom: 1px solid var(--twitter-background);
+    padding: 20px 20px;
+}
+
+.view-post-header > h2{
+    font-weight: 800;
+    font-size: 20px;
+} 
+
+.viewpost-container::-webkit-scrollbar {
+    display: none;
+}
+
+.viewpost-container > h3 {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--grey-button);
+    margin: 20px;
+}

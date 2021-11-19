@@ -1,0 +1,19 @@
+.follower-container {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid var(--twitter-background);
+    cursor: pointer;
+}
+
+.follow-details {
+    padding-left: 20px;
+}
+
+.follow-details > h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.follow-details > span {
+    color: var(--grey-text);
+}

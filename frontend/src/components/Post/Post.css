@@ -1,0 +1,92 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--twitter-background);
+}
+
+.main_content_container {
+    display: flex;
+    flex: 1;
+}
+
+.post_content {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.post_header > a {
+    color: black;
+    font-weight: bold;
+}
+
+.username, .date {
+    color: var(--grey-text);
+}
+
+.post_footer {
+    display: flex;
+    align-items: center;
+}
+
+.post_footer > Button {
+    display: flex;
+    flex: 1;
+    margin-right: 75px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.post_footer > Button > .MuiSvgIcon-root {
+    padding: 0;
+    /* color: var(--grey-button) !important; */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+}
+
+.post_footer > Button > .MuiSvgIcon-root:hover {
+    /* background-color: var(--twitter-background); */
+    background-color: rgb(227 243 252);
+    color: var(--twitter-color) !important;
+    cursor: pointer;
+}
+
+.post_header > span {
+    margin-left: 8px;
+}
+
+.likeCount {
+    margin-top: 6px;
+}
+
+.post > .retweet-text, .replyState-text {
+    color: var(--grey-text);
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.post_header .date {
+    flex: 1;
+}
+
+.post_header {
+    display: flex;
+}
+
+.delete-btn {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    color: var(--grey-button);
+}
+
+.delete-btn:hover {
+    color: black;
+}

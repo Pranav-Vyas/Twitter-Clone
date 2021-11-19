@@ -1,0 +1,43 @@
+.explore {
+    flex: 0.6;
+    border-right: 1px solid var(--twitter-background);
+    min-width: fit-content;
+    overflow-y: scroll;
+    /* padding-top: 10px; */
+}
+
+.explore-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border-bottom: 1px solid var(--twitter-background);
+    padding: 20px 20px;
+}
+
+.explore-header > h2{
+    font-weight: 800;
+    font-size: 20px;
+} 
+
+.explore::-webkit-scrollbar {
+    display: none;
+}
+
+.explore-searchbar {
+    display: flex;
+    padding-left: 20px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border-bottom: 8px solid var(--twitter-background);
+}
+
+.explore-searchbar > input {
+    width: 400px;
+    height: 50px;
+    border-radius: 60px;
+    border: none;
+    background-color: #EFF3F4;
+    padding-left: 20px;
+    outline: none;
+}
