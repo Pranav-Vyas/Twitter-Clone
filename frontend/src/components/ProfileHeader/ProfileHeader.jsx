@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 // import { useHistory } from 'react-router-dom';
 import { Avatar } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import defaultCoverPhoto from "../../images/default-cover-photo.png";
 import "./ProfileHeader.css";
 
 function ProfileHeader({user, handleFollowCount}) {
@@ -63,7 +62,7 @@ function ProfileHeader({user, handleFollowCount}) {
         }
     }
 
-    const uploadFile = async () => {
+    const uploadAvatar = async () => {
         const fd = new FormData();
         var input = document.querySelector('input[type="file"]');
         console.log("input is ", input);
@@ -82,20 +81,48 @@ function ProfileHeader({user, handleFollowCount}) {
         console.log(res);
     }
 
+    const uploadCoverPhoto = async () => {
+        const fd = new FormData();
+        var input = document.querySelector('input[name="coverPhotoInput"]');
+        console.log("cover photo input is ", input);
+        fd.append('coverPhoto', input.files[0]); 
+        const token = localStorage.getItem('token');
+        const res = await fetch("http://localhost:5000/api/upload/coverPhoto", {
+            mode: 'cors',  // this cannot be 'no-cors'
+            method: "POST",
+            headers: new Headers({
+                // 'Accept': "application/json",
+                // "content-type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }),
+            body: fd
+        });
+        console.log(res);
+    }
+
     const handleUpload = (e) => {
         console.log('your image ',e.target.files[0]);
-        uploadFile();
+        uploadAvatar();
+
+    }
+
+    const handleCoverPhoto = (e) => {
+        console.log('your coverPhoto ',e.target.files[0]);
+        uploadCoverPhoto();
 
     }
 
     return (
         <div className="profile-header">
             <div className="coverPhoto-container">
+                {!user.coverPhoto && <img className="coverPhoto" src={defaultCoverPhoto} />}
+                {user.coverPhoto && <img className="coverPhoto" src={`http://localhost:5000/api/upload/${user._id}/coverPhoto`} alt="" /> }                
+
                 <div className="profile-avatar">
                     {
                         (LoginId === user._id) &&
                         <label className="custom-file-upload">
-                            <input onChange={handleUpload} type="file"/>
+                            <input className="avatar-input" onChange={handleUpload} type="file"/>
                         </label>
                     }
                     
@@ -105,18 +132,24 @@ function ProfileHeader({user, handleFollowCount}) {
                     {/* <Avatar src=''></Avatar> */}
 
                 </div>
+                
             </div>
             
             {
                 (LoginId !== user._id) &&
                 <div className="profileButton-container">
-                        <Link to="/"><MailOutlineIcon/></Link>
                         <button onClick={handleFollow} className="follow-btn">{followFlag ? "Following" : "Follow"}</button>
                 </div>
             }
             {
                 (LoginId === user._id) &&
-                <div style={{height: "80px"}} className="profileButton-container"></div>
+                // <div style={{height: "80px"}} className="profileButton-container"></div>
+                <div className="profileButton-container">
+                    <label className="follow-btn">
+                        <input name="coverPhotoInput" onChange={handleCoverPhoto} type="file"/>
+                        Cover Photo
+                    </label>
+                </div>
             }
             
             

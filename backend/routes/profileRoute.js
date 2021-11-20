@@ -35,7 +35,7 @@ router.get("/user/:id", async (req, res) => {
         populate: ['postedBy', 'retweetData', 'replyTo']
     })
     .then((user) => {
-        console.log(user);
+        // console.log(user);
         return res.status(200).json({user:user});
     }).catch((err) => {
         console.log(err);

@@ -1,8 +1,25 @@
 .coverPhoto-container {
-    height: 200px;
+    height: 250px;
     background-color: #CFD9DE;
     position: relative;
 }
+
+.coverPhoto {
+    height: 100%;
+    width: 100%;
+}
+
+.coverphoto-input {
+    position: absolute;
+    border: 1px solid #ccc;
+    display: inline-block;
+    /* padding: 6px 12px; */
+    cursor: pointer;
+    margin-top: 200px;
+    margin-left: 550px;
+}
+
+
 
 .profile-avatar > .MuiAvatar-root {
     height: 130px;
@@ -11,9 +28,6 @@
     position: absolute;
     bottom: -65px;
     border: 4px solid #fff;
-    /* //////// */
-    /* opacity: 1;
-    transition: opacity .2s ease-in-out; */
 }
 
 .profileButton-container {
@@ -55,6 +69,10 @@
 
 
 input[type="file"] {
+    display: none;
+}
+
+.avatar-input {
     display: none;
 }
 
