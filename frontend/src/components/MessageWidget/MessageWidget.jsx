@@ -5,6 +5,7 @@ import "./MessageWidget.css"
 function MessageWidget({setCurrentChat}) {
 
     const userId = localStorage.getItem('LoginId');
+    // const [searchText, setsearchText] = useState("");
     const [conversations, setconversations] = useState([]);
 
     useEffect(() => {
@@ -33,12 +34,19 @@ function MessageWidget({setCurrentChat}) {
         fetchConversations();
     }, [])
 
+    // const handleOnChange = (e) => {
+    //     setsearchText(e.target.value);
+    // }
     
     return (
         <div className="message-widget">
-            <div className="message-searchbar">
-                <input type="text" placeholder="Search For Friends"/>
+            {/* <div className="message-searchbar">
+                <input onChange={handleOnChange} value={searchText} type="text" placeholder="Search For Friends"/>
+            </div> */}
+            <div className="message-widget-header">
+                <h2>Start a conversation</h2>
             </div>
+            
             {
                 conversations.map((c) => {
                     return (
