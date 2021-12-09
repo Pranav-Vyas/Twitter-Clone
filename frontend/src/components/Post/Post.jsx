@@ -195,6 +195,10 @@ function Post(
                     <span className="replyState-text">{replyState}</span>
                     <div className="post_body">
                         <p>{post.content}</p>
+
+                        {/* <div className="post-pic">
+                            {post.postedBy.avatar && <img src={`http://localhost:5000/api/upload/${post.postedBy._id}/avatar`} alt="" />}
+                        </div> */}
                     </div>
                     <div className="post_footer">
                         <button onClick={handleShow} className="">

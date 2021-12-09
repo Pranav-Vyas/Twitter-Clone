@@ -40,7 +40,9 @@ function BookmarkPage() {
             <div className="bookmark-header">
                 <h2>Bookmarks</h2>
             </div> 
-            {
+
+            {/* loader will show up untill user is null */}
+            { 
                 !user && 
                 (
                     <div className="bookmark-body">
@@ -48,6 +50,8 @@ function BookmarkPage() {
                     </div>
                 )
             }
+
+            {/* profileSaves will render if user != null and user.saves != null */}
             {
                 user && user.saves &&
                 <ProfileSaves user={user}/>

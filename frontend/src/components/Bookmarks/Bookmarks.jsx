@@ -9,10 +9,11 @@ function Bookmarks() {
 
     const history = useHistory();
 
+    // checking if user is authenticated or not 
     useEffect(() => {
         const checkAuthentication = async () => {
             try {
-                const token = localStorage.getItem('token');
+                const token = localStorage.getItem('token'); // getting token from localStorage
                 const res = await fetch("http://localhost:5000", {
                     mode: 'cors',
                     method: "get",
@@ -28,7 +29,7 @@ function Bookmarks() {
                 }
             } catch {
                 history.push({
-                    pathname: "/login"
+                    pathname: "/login" // redirecting to login
                 })
             }
         }

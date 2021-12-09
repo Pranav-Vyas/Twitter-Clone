@@ -56,7 +56,7 @@ function ExploreLayout() {
                 users.filter((user) => {
                     if (searchText === "") {
                         return user;
-                    } else if (user.name.toLowerCase().includes(searchText.trim().toLowerCase())){
+                    } else if ((user.name.toLowerCase().includes(searchText.trim().toLowerCase())) || (user.username.toLowerCase().includes(searchText.trim().toLowerCase()))){
                         return user;
                     }
                 }).map((user) => {

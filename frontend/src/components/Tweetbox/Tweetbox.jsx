@@ -7,7 +7,7 @@ function Tweetbox({reloadFeed}) {
 
     const [tweetText, setTweetText] = useState("");
     const btnRef = React.createRef();
-    let value ="";
+    let value = "";
     const history = useHistory();
     const LoginId = localStorage.getItem('LoginId');
 

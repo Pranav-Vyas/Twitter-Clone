@@ -16,7 +16,6 @@ router.post("/", async (req, res) =>{
                 res.cookie("jwtoken", token, {
                     httpOnly: true
                 });
-                // console.log(req.headers);
                 return res.status(200).json({user: foundUser, token: token});
             }
         }

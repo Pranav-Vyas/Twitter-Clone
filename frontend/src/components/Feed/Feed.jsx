@@ -104,6 +104,12 @@ function Feed() {
                 <Loader/>
             }
             {
+                postFlag && posts.length === 0 && 
+                <>
+                <h2 className="feedh2">Start following people to see posts</h2>
+                </>
+            }
+            {
                 posts.map((post) => {
                     return <Post key={post._id} post={post} replyTo={post.replyTo} reloadFeed={reloadFeed} timestamp={timeDifference(new Date(), new Date(post.createdAt))} />
                 })

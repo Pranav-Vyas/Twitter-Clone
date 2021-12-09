@@ -3,7 +3,6 @@ const dotenv = require("dotenv");
 const port = 5000;
 const app = express();
 var cors = require("cors");
-// const middleware = require("./middleware.js");
 const session = require("express-session");
 
 dotenv.config({path: './config.env'});
@@ -28,7 +27,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
-  });
+});
 
 app.use("/login", require("./routes/loginRoute"));
 app.use("/signup", require("./routes/RegisterRoute"));

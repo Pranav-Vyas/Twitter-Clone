@@ -4,6 +4,7 @@ const router = express.Router();
 const middleware = require("../../middleware");
 const multer = require('multer');
 
+// multer middleware
 const upload = multer({
     limits : {
         fileSize: 2000000
@@ -17,12 +18,16 @@ const upload = multer({
     }
 })
 
+// post route to upload profile photo
+
 router.post("/avatar", middleware, upload.single('avatar'), async (req, res) => {
     console.log("your are in avatar post request");
     req.foundUser.avatar = req.file.buffer;
     await req.foundUser.save();
     res.send();
 })
+
+// post route to upload coverPhoto
 
 router.post("/coverPhoto", middleware, upload.single('coverPhoto'), async (req, res) => {
     console.log("your are in coverPhoto post request");
@@ -32,12 +37,13 @@ router.post("/coverPhoto", middleware, upload.single('coverPhoto'), async (req, 
 })
 
 
-router.delete("/avatar", middleware, async (req, res) => {
-    req.foundUser.avatar = undefined;
-    await req.foundUser.save();
-    res.send();
-})
+// router.delete("/avatar", middleware, async (req, res) => {
+//     req.foundUser.avatar = undefined;
+//     await req.foundUser.save();
+//     res.send();
+// })
 
+// route to get profile photo
 
 router.get("/:id/avatar", async (req, res) => {
     console.log("in avatar route");
@@ -53,6 +59,8 @@ router.get("/:id/avatar", async (req, res) => {
         res.status(400).send();
     }
 })
+
+// route to get coverPhoto
 
 router.get("/:id/coverPhoto", async (req, res) => {
     console.log("in coverPhoto route");

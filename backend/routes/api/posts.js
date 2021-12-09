@@ -5,7 +5,8 @@ const router = express.Router();
 const middleware = require("../../middleware");
 
 router.get("/", middleware, async (req, res) => {
-    Post.find()
+    var foundUser = req.foundUser;
+    Post.find({postedBy: { $in: foundUser.following }})
     .populate("postedBy")
     .populate("retweetData")
     .populate("replyTo")
@@ -20,6 +21,22 @@ router.get("/", middleware, async (req, res) => {
     })
 })
 
+router.get("/widgets", middleware, async (req, res) => {
+    var foundUser = req.foundUser;
+    Post.find()
+    .populate("postedBy")
+    .populate("retweetData")
+    .populate("replyTo")
+    .sort({"retweets": -1})
+    .then( async (results) => {
+        results = await User.populate(results, {path: "replyTo.postedBy"})
+        res.status(200).json({results: results, userId: req.foundUser._id})
+    })
+    .catch((err) => {
+        console.log(err);
+        return res.status(400).json({results: []});
+    })
+})
 
 router.get("/getLikeCount",middleware, async (req, res) => {
     var postId = req.header('postId');
