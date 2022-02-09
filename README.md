@@ -36,8 +36,8 @@ Twitter-Clone is an attempt to implement some of twitter's functionalities.
 - mongoose
 - multer
 
-## Prerequisites:
-Node.js and MongoDB should be installed on the computer
+## Prerequisites to run:
+Node.js and MongoDB should be installed on the computer.
 
 ## Steps to run:
 ### to run frontend: 
